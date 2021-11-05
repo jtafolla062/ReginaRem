@@ -24,6 +24,10 @@ p {
 h1 {
     color: #0E5F6B;
 }
+h2{
+    color: #0E5F6B;
+    font-size: 16px;
+}
 
 .container-texto{
     width: 1000px;
