@@ -22,12 +22,6 @@ ul{
 .footer{
 	background-color: #BF6969;
     padding: 70px 0;
-
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
 }
 .footer-col{
    width: 33%;
