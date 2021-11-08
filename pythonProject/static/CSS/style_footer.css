@@ -11,7 +11,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #BF6969;
+	background-color: #083944;
     padding: 70px 0;
 }
 .footer-col{
@@ -31,7 +31,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #3D7C74;
+	background-color: #F9535C;
 	height: 5px;
 	box-sizing: border-box;
 	width: 90px;
@@ -54,6 +54,7 @@ ul{
 	padding-left: 8px;
 }
 
+
 .footer-col .social-links a:hover{
 	color: #24262b;
 	background-color: #ffffff;
@@ -70,4 +71,9 @@ ul{
   .footer-col{
     width: 100%;
 }
+}
+
+.footer-col img{
+width: 70px;
+height: 70px;
 }
