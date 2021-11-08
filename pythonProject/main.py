@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    return render_template('TerminosCondiciones.html')
+    return render_template('MVV.html')
 @app.route('/PoliticaPrivacidad')
 def login():
     return render_template('PoliticaPrivacidad.html')
