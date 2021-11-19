@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Terminos y Condiciones</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style_footer.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style_main.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style_header.css')}}">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-</head>
-<body>
-     <header>
-        <div class="menu">
-            <img src="{{url_for('static',filename='imagenes/logo.png')}}" alt="">
-            <nav>
-            <ul>
-                <li><a href=""> Tienda </a> </li>
-                <li><a href=""> Nosotros</a> </li>
-                <li><a href=""> Contacto</a> </li>
-                <li><a href=""> Categorias </a> </li>
-            </ul>
-            </nav>
-        </div>
-    </header>
-    <center>
+{% extends 'base.html' %}
+{% block titulo %}
+Misión, Visión, Valores
+{% endblock %}
+
+{% block contenido %}
+<center>
         <div class="container-obj">
             <div class="container-texto">
                 <br>
@@ -97,38 +79,5 @@
                 <p>Nos reservamos el derecho, a nuestra sola discreción, de actualizar, modificar o reemplazar cualquier parte de estas Condiciones del servicio mediante la publicación de las actualizaciones y los cambios en nuestro sitio web. Es tu responsabilidad revisar nuestro sitio web periódicamente para verificar los cambios. El uso continuó de o el acceso a nuestro sitio Web o el Servicio después de la publicación de cualquier cambio en estas Condiciones de servicio implica la aceptación de dichos cambios.</p><br>
             </div>
         </div>
-    </center>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Contactanos</h4>
-                    <ul>
-                        <li style="color:white">Morelia, Michoacán, México<li>
-                        <li style="color:white">Tel: (443) 230- 06- 02<li>
-                        <li style="color:white">Correo: remtienda9@gmail.com<li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>¿Te podemos ayudar?</h4>
-                    <ul>
-                        <li><a href="/"> Terminos y Condiciones </a><li>
-                        <li><a href="/PoliticaPrivacidad"> Politica de Privacidad </a><li>
-                        <li><a href="/MVV"> Mision, Vision y Valores </a><li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Sigue nuestras Redes</h4>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/ArtReginaRem/" target="_blank"><img src="{{url_for('static',filename='../static/imagenes/Rem Estudio Creativo-37.png')}}" alt="" width=15" height="7"></a>
-                        <a href="https://www.instagram.com/regina.rem.art/?igshid=1jsyimsw6v1z6" target="_blank"><img src="{{url_for('static',filename='../static/imagenes/Rem Estudio Creativo-39.png')}}" alt="" width=15" height="7"></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+ </center>
+ {% endblock %}
