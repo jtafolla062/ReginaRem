@@ -67,6 +67,7 @@ h2{
 
 h3{
     color: #0A636F;
+    font-size: 35px;
 }
 
 table{
@@ -82,6 +83,19 @@ th{
 }
 
 
+form{
+    text-align: left;
+    font-size: 25px;
+}
+
+input{
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #F9535C;
+    text-align: center;
+    padding: 10px 32px;
+}
 
 
     </style>
@@ -111,7 +125,23 @@ th{
       <br>
       <h3>♡ AGREGAR  PRODUCTOS ♡</h3>
       <br>
-        
+        {% block contenido %}
+
+
+   <form action="/guardarProducto/{{usuario}}" method="post">
+       Numero de prducto
+      <input type="text" name="claveP"><br><br>
+       Nombre de prducto
+      <input type="text" name="nombreP"><br><br>
+      Descripcion
+      <input type="text" name="descP"><br><br>
+       Precio
+      <input type="text" name="precioP"><br><br>
+      <br><input type="submit" value="Registrar producto">
+
+   </form>
+{% endblock %}
+
 
   </center>
 
