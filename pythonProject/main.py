@@ -22,6 +22,13 @@ def mA():
 def mP():
     return render_template('menuProd.html')
 
+@app.route('/menuProdConsul')
+def mPC():
+    return render_template('menuProdConsul.html')
+
+@app.route('/menuProdAgregar')
+def mPA():
+    return render_template('menuProdAgregar.html')
 
 
 if __name__ == '__main__':

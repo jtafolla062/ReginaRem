@@ -65,6 +65,25 @@ h2{
     color: black;
 }
 
+h3{
+    color: #0A636F;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    height:50px;
+    text-align: center;
+    background-color: #F9535C;
+    color: white;
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -80,7 +99,6 @@ h2{
                         <li><a href="/menuProdConsul"> ♡ Consultar ♡</a> </li>
                         <li><a href="/menuProdAgregar"> ♡ Agregar ♡</a> </li>
 
-
                 <li><a href="/"> CERRAR</a> </li>
             </ul>
             </nav>
@@ -88,7 +106,20 @@ h2{
     </header>
 
 <div class="tablon">
-  <center><img src="{{url_for('static',filename='../static/imagenes/Rem Estudio Creativo-13.png')}}" style="width: 430px; height: 503px" ></center>
+  <center>
+      <br>
+      <h3>♡ P R O D U C T O S ♡</h3>
+      <br>
+            <table border="1">
+     <th> Folio del producto </th>
+     <th> Nombre del producto </th>
+     <th> Descripcion </th>
+     <th> Precio </th>
+     <th> Eliminar </th>
+     <th> Actualizar </th>
+            </table>
+
+  </center>
 
 </div>
 </body>
