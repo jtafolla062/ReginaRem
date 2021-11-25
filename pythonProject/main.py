@@ -15,6 +15,14 @@ def pol():
 def mvv():
     return render_template('MVV.html')
 
+@app.route('/menuAd')
+def mA():
+    return render_template('menuAdmn.html')
+@app.route('/menuProd')
+def mP():
+    return render_template('menuProd.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
