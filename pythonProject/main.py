@@ -144,6 +144,10 @@ def mPC():
 def mPA():
     return render_template('menuProdAgregar.html')
 
+@app.route('/menuClienConsul')
+def mCC():
+    return render_template('menuClienteConsul.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
