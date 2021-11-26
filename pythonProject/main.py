@@ -40,6 +40,70 @@ login_manager.login_view='login'
 login_manager.login_message='¡ Tu sesión expiró !'
 login_manager.login_message_category="info"
 
+class Usuario(UserMixin,db.Model):
+    __tablename__='Usuarios'
+    idUsuario=Column(Integer,primary_key=True)
+    nombreCompleto=Column(String,nullable=False)
+    direccion=Column(String,nullable=False)
+    telefono=Column(String,nullable=False)
+    email=Column(String,unique=True)
+    password=Column(String(128),nullable=False)
+    tipo=Column(String,nullable=False)
+    estatus=Column(String,nullable=False)
+    genero=Column(String,nullable=False)
+    saldo = Column(Float, nullable=False)
+
+    def validarPassword(self,passw):
+        if self.password == passw:
+            return True
+        else:
+            return False
+
+    #Definición de los métodos para el perfilamiento
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        if self.estatus=='Activo':
+            return True
+        else:
+            return False
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return self.idUsuario
+
+    def is_admin(self):
+        if self.tipo=='Administrador':
+            return True
+        else:
+            return False
+    def is_vendedor(self):
+        if self.tipo=='Vendedor':
+            return True
+        else:
+            return False
+    def is_comprador(self):
+        if self.tipo=='Comprador':
+            return True
+        else:
+            return False
+    #Definir el método para la autenticacion
+    def validar(self,email,password):
+        usuario=Usuario.query.filter(Usuario.email==email).first()
+        #print(usuario.email)
+        if usuario!=None and usuario.validarPassword(password) and usuario.is_active():
+            return usuario
+        else:
+            return None
+
+    #Método para agregar una cuenta de usuario
+    def agregar(self):
+        db.session.add(self)
+        db.session.commit()
+
+
 @login_manager.user_loader
 def cargar_usuario(id):
     return Usuario.query.get(int(id))
