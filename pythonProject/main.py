@@ -151,9 +151,6 @@ def mPC():
 def mPA():
     return render_template('menuProdAgregar.html')
 
-@app.route('/menuClienConsul')
-def mCC():
-    return render_template('menuClienteConsul.html')
 
 
 class Productos(db.Model):
@@ -182,6 +179,37 @@ class Productos(db.Model):
 
     def consultaGeneral(self):
         return self.query.all()
+
+ #CLIENTES----------------------------------------------------------------
+@app.route('/menuClienConsul')
+def mCC():
+    return render_template('menuClienteConsul.html')
+#EMPLEADOS----------------------------------------------------------------
+@app.route('/menuEmpl')
+def mEm():
+    return render_template('menuEmpl.html')
+
+@app.route('/menuEmplConsul')
+def mEC():
+    return render_template('menuEmplConsul.html')
+
+@app.route('/menuEmplAgregar')
+def mEA():
+    return render_template('/menuEmplAgregar.html')
+
+#PROVEEDOR---------------------------------------------------------------
+@app.route('/menuProv')
+def mProv():
+    return render_template('menuProv.html')
+
+@app.route('/menuProvConsul')
+def mProvC():
+    return render_template('menuProvConsul.html')
+
+@app.route('/menuProvAgregar')
+def mProvA():
+    return render_template('/menuProvAgregar.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

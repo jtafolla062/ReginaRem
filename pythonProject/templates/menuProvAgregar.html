@@ -83,6 +83,19 @@ th{
 }
 
 
+form{
+    text-align: left;
+    font-size: 25px;
+}
+
+input{
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #F9535C;
+    text-align: center;
+    padding: 10px 32px;
+}
 
 
     </style>
@@ -94,10 +107,12 @@ th{
             <nav>
             <ul class="destacadas">
                 <li><a href="/menuAd"> INICIO</a> </li>
-                <li><a href="/menuClienConsul"> Clientes</a> </li>
-                <li><a href="/menuEmpl"> Empleados</a> </li>
-                <li><a href="/menuProv"> Proveedores </a> </li>
-                <li><a href="/menuProd"> Productos</a> </li>
+
+                <li><a href=""> Proveedores</a> </li>
+
+                        <li><a href="/menuProvConsul"> ♡ Consultar ♡</a> </li>
+                        <li><a href="/menuProvAgregar"> ♡ Agregar ♡</a> </li>
+
 
                 <li><a href="/"> CERRAR</a> </li>
             </ul>
@@ -108,16 +123,28 @@ th{
 <div class="tablon">
   <center>
       <br>
-      <h3>♡ CONSULTA DE CLIENTES ♡</h3>
+      <h3>♡ AGREGAR  PROVEEDOR ♡</h3>
       <br>
-            <table border="1">
-                <th> ID Usuario </th>
-                <th> Nombre de usuario </th>
-                <th> Pasword </th>
-                <th> Saldo </th>
-                <th> Rol </th>
+        {% block contenido %}
 
-            </table>
+
+   <form action="/guardarProducto/{{usuario}}" method="post">
+       Dato
+      <input type="text" name="claveP"><br><br>
+       Dato
+      <input type="text" name="precioP"><br><br>
+       Dato
+      <input type="text" name="nombreP"><br><br>
+      Dato
+      <input type="text" name="descP"><br><br>
+       Dato
+      <input type="text" name="precioP"><br><br>
+
+      <br><input type="submit" value="Registrar">
+
+   </form>
+{% endblock %}
+
 
   </center>
 

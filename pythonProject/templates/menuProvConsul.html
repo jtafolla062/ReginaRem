@@ -94,10 +94,11 @@ th{
             <nav>
             <ul class="destacadas">
                 <li><a href="/menuAd"> INICIO</a> </li>
-                <li><a href="/menuClienConsul"> Clientes</a> </li>
-                <li><a href="/menuEmpl"> Empleados</a> </li>
-                <li><a href="/menuProv"> Proveedores </a> </li>
-                <li><a href="/menuProd"> Productos</a> </li>
+
+                <li><a href=""> Proveedores</a> </li>
+
+                        <li><a href="/menuProvConsul"> ♡ Consultar ♡</a> </li>
+                        <li><a href="/menuProvAgregar"> ♡ Agregar ♡</a> </li>
 
                 <li><a href="/"> CERRAR</a> </li>
             </ul>
@@ -108,15 +109,29 @@ th{
 <div class="tablon">
   <center>
       <br>
-      <h3>♡ CONSULTA DE CLIENTES ♡</h3>
+      <h3>♡ Proveedores ♡</h3>
       <br>
             <table border="1">
-                <th> ID Usuario </th>
-                <th> Nombre de usuario </th>
-                <th> Pasword </th>
-                <th> Saldo </th>
-                <th> Rol </th>
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
 
+     <th> Eliminar </th>
+     <th> Actualizar </th>
+
+                {%for tienda_reginarem in productos  %}
+     <tr>
+
+         <td>{{productos.id_prod}}</td>
+         <td>{{productos.cat_prod}}</td>
+         <td>{{productos.nom_prod}}</td>
+         <td>{{productos.desc_prod}}</td>
+         <td>{{productos.prec_prod}}</td>
+
+     </tr>
+                {% endfor %}
             </table>
 
   </center>
