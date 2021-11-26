@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/style_login.css')}}">
+</head>
+
+<body>
+    <div class="center">
+        <h1>Iniciar Sesion</h1>
+        <form action="validar.php" method="POST">
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Usuario</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" required>
+                <span></span>
+                <label>Contraseña</label>
+            </div>
+            <input type="submit" value="Iniciar Sesion">
+            <div class="signup_link">
+                No estas registrado? <a href="#">Registrate</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
