@@ -1,4 +1,3 @@
-from flask import Flask, render_template
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, BLOB, ForeignKey, Float, Date
@@ -59,6 +58,10 @@ def cerrarSesion():
 @app.route('/Login')
 def login():
     return render_template('Login.html')
+
+@app.route('/RegistroU')
+def registroU():
+    return render_template('RegistroU.html')    
 
 #PRODUCTOS-------------------------------------------
 @app.route('/menuAd')
