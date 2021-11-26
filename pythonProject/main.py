@@ -4,8 +4,15 @@ from sqlalchemy import Column, Integer, String, BLOB, ForeignKey, Float, Date
 from flask import  session,redirect, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from datetime import timedelta
-db = SQLAlchemy()
 app = Flask(__name__)
+db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@localhost/tienda_reginarem'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
+
+
+
+
 
 @app.route('/')
 def inicio():
@@ -148,6 +155,33 @@ def mPA():
 def mCC():
     return render_template('menuClienteConsul.html')
 
+
+class Productos(db.Model):
+    __tablename__='productos'
+    id_prod=Column(Integer,primary_key=True)
+    cat_prod=Column(String)
+    nom_prod=Column(String)
+    desc_prod=Column(String)
+    prec_prod=Column(Float)
+
+    def consultaIndividual(self, id):
+        return Productos.query.get(id)
+
+    def agregar(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def editar(self):
+        db.session.merge(self)
+        db.session.commit()
+
+    def eliminar(self, id):
+        p = self.consultaIndividual(id)
+        db.session.delete(p)
+        db.session.commit()
+
+    def consultaGeneral(self):
+        return self.query.all()
 
 if __name__ == '__main__':
     app.run(debug=True)
