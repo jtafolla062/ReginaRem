@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block titulo %}
+ReginaRem
+{% endblock %}
+
+{% block contenido %}
+<center>
+    <div class="container-obj" style="background-image: url({{url_for('static',filename='../static/imagenes/fondo.jpg')}}); background-attachment: fixed">
+        <div class="contenedor-top" style="height: 240px">
+            <img src="{{url_for('static',filename='../static/imagenes/Rem Estudio Creativo-42.png')}}" style="width: 140px; height: 150px">
+        </div>
+        <div class="contenedor-top" style="height: 50px">
+            <h1 style="font-size: 100px; letter-spacing:0.12em; font-family: Harrington;">Regina Rem Art</h1>
+        </div>
+        <div class="contenedor-top" style="height: 100px">
+            <h2 style="letter-spacing:0.12em">♡ ARTISTA MEXICANA ♡</h2>
+        </div>
+        <div class="contenedor-top" style="height: 50px">
+            <a href="/Login"><input type="button" value="Ingresar" class="boton_inicio"></a>
+        </div>
+        <div class="contenedor-top" style="height: 50px">
+        </div>
+        <div class="contenedor">
+            <div></div>
+            <div class="contenedor-about">
+                <br>
+                <h1 style="font-size: 35px;"> Q U I E N E S &nbsp;S O M O S</h1><br><hr><br>
+                <p style="text-align: justify; font-size: 30px;">Somos una empresa dedicada a la creación de diseños y productos originales. Buscamos la espontaneidad y creatividad en las personas al ser inspiradas con nuestros diseños. Nuestra finalidad es hacer tus ideas una realidad. </p><br>
+            </div>
+            <div class="contenedor-img1">
+                <img src="{{url_for('static',filename='../static/imagenes/1.webp')}}" style="width: 430px; height: 503px" >
+            </div>
+            <br>
+        </div>
+    </div>
+</center>
+{% endblock %}
