@@ -2,8 +2,9 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, BLOB, ForeignKey, Float, Date
 from flask import  session,redirect, url_for
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from datetime import timedelta
+db = SQLAlchemy()
 app = Flask(__name__)
 
 @app.route('/')
