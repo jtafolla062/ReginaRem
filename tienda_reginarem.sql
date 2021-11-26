@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 26-11-2021 a las 02:19:18
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 26-11-2021 a las 15:21:15
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `cat_prod` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `nom_prod` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `desc_prod` varchar(500) COLLATE latin1_spanish_ci NOT NULL,
-  `prec_prod` float NOT NULL
+  `prec_prod` float NOT NULL,
+  PRIMARY KEY (`id_prod`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
@@ -52,7 +53,35 @@ INSERT INTO `productos` (`id_prod`, `cat_prod`, `nom_prod`, `desc_prod`, `prec_p
 ('tb09', 'TazaBotella', 'Pocillo mágico de peltre', 'Pocillo magico de peltre con estampado de zorritos.\r\n-Medidas: 8cm de diámetro x 7.5cm de alto\r\nCapacidad : 320 ml\r\nModelo: zorritos\r\nDebido al esmaltado artesanal y forma de producción, el acero esmaltado puede tener pequeñas imperfecciones. Dando al producto un toque más rústico.', 65.2),
 ('tb10', 'TazaBotella', 'Pocillo de peltre', 'Pocillo de peltre sencillo con estampado de zorritos.\r\n-Medidas: 8cm de diámetro x 7.5cm de alto\r\nCapacidad : 320 ml\r\nModelo: zorritos\r\nDebido al esmaltado artesanal y forma de producción, el acero esmaltado puede tener pequeñas imperfecciones. Dando al producto un toque más rústico.', 45.5),
 ('tb11', 'TazaBotella', 'Botella de zorritos', 'Botella para agua - Cilindro metalico edicion Zorritos\r\nMedidas:\r\nAltura: 20 cm\r\nDiámetro: 7 cm\r\nCapacidad: 500 ml\r\nTapa: De rosca con gancho para mayor practicidad.\r\nLleva tu bebida favorita a todos lados con esta botella personalizada con cualquier diseño.', 65.25),
-('tb12', 'TazaBotella', 'Taza de zorritos', 'Taza de ceramica- Edicion Zorritos\r\nMaterial: Cerámica\r\nTipo de taza: Taza de café con capacidad útil: 11 oz = 325 ml. Capacidad total: 360 ml\r\nDimensiones de la taza: Diámetro exterior: 81mm. Diámetro interior: 74 mm. Altura: 96 mm. \r\nPeso de la taza: 340 gr.\r\nCalidad premium, con un lacado especial para personalización e impresión. Las tazas son de cerámica, y tendrán un acabado brillante y resistente. Se presentan dentro de una caja de cartón.', 50.25);
+('tb12', 'TazaBotella', 'Taza de zorritos', 'Taza de ceramica- Edicion Zorritos\r\nMaterial: Cerámica\r\nTipo de taza: Taza de café con capacidad útil: 11 oz = 325 ml. Capacidad total: 360 ml\r\nDimensiones de la taza: Diámetro exterior: 81mm. Diámetro interior: 74 mm. Altura: 96 mm. \r\nPeso de la taza: 340 gr.\r\nCalidad premium, con un lacado especial para personalización e impresión. Las tazas son de cerámica, y tendrán un acabado brillante y resistente. Se presentan dentro de una caja de cartón.', 50.25),
+('1', '1', '1', '1', 1),
+('2', '2', '2', '2', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `pass` varchar(50) NOT NULL,
+  `saldo` float NOT NULL,
+  `rol` int(11) NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_user`, `username`, `pass`, `saldo`, `rol`) VALUES
+(1, 'admin', '123', 1e15, 1),
+(2, 'cliente1', '123', 1000, 2),
+(3, 'cliente2', '123', 500, 2),
+(4, 'cliente3', '123', 100, 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
