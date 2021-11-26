@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Menu navegar</title>
     <link rel="stylesheet" href="{{url_for('static',filename='CSS/style_main.css')}}">
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <style>
 
@@ -48,7 +47,7 @@ nav ul li a::before{
     height: 5px;
     top: 0;
     position: absolute;
-
+    transition: width 0.2s;
 }
 
 nav ul li a:hover::before{
@@ -66,6 +65,25 @@ h2{
     color: black;
 }
 
+h3{
+    color: #0A636F;
+    font-size: 35px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    height:50px;
+    text-align: center;
+    background-color: #F9535C;
+    color: white;
+}
+
+
+
 
     </style>
 </head>
@@ -76,10 +94,11 @@ h2{
             <nav>
             <ul class="destacadas">
                 <li><a href="/menuAd"> INICIO</a> </li>
-                <li><a href="/menuClienConsul"> Clientes</a> </li>
-                <li><a href="/menuEmpl"> Empleados</a> </li>
-                <li><a href="/menuProv"> Proveedores </a> </li>
-                <li><a href="/menuProd"> Productos</a> </li>
+
+                <li><a href=""> Proveedores</a> </li>
+
+                        <li><a href="/menuProvConsul"> ♡ Consultar ♡</a> </li>
+                        <li><a href="/menuProvAgregar"> ♡ Agregar ♡</a> </li>
 
                 <li><a href="/"> CERRAR</a> </li>
             </ul>
@@ -88,7 +107,34 @@ h2{
     </header>
 
 <div class="tablon">
-  <center><img src="{{url_for('static',filename='../static/imagenes/Rem Estudio Creativo-13.png')}}" style="width: 430px; height: 503px" ></center>
+  <center>
+      <br>
+      <h3>♡ Proveedores ♡</h3>
+      <br>
+            <table border="1">
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
+     <th> DATO </th>
+
+     <th> Eliminar </th>
+     <th> Actualizar </th>
+
+                {%for tienda_reginarem in productos  %}
+     <tr>
+
+         <td>{{productos.id_prod}}</td>
+         <td>{{productos.cat_prod}}</td>
+         <td>{{productos.nom_prod}}</td>
+         <td>{{productos.desc_prod}}</td>
+         <td>{{productos.prec_prod}}</td>
+
+     </tr>
+                {% endfor %}
+            </table>
+
+  </center>
 
 </div>
 </body>
