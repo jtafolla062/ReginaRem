@@ -149,12 +149,7 @@ def mPA():
     return render_template('menuProdAgregar.html')
 
 
-<<<<<<< HEAD
 class Producto(db.Model):
-=======
-
-class Productos(db.Model):
->>>>>>> 3226f3d6fdfaa54fdebc0000dd7cae010de1c5fd
     __tablename__='productos'
     id_prod=Column(String,primary_key=True)
     cat_prod=Column(String)
