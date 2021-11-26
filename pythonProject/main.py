@@ -1,18 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session,redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, BLOB, ForeignKey, Float, Date
-from flask import  session,redirect, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from datetime import timedelta
+
 app = Flask(__name__)
-db = SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@localhost/tienda_reginarem'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:@localhost/tienda_reginarem'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-
-
-
-
-
+db = SQLAlchemy(app)
 
 @app.route('/')
 def inicio():
@@ -145,23 +140,25 @@ def mP():
 
 @app.route('/menuProdConsul')
 def mPC():
-    return render_template('menuProdConsul.html')
+    prod = Producto()
+    prods = prod.consultaGeneral()
+    return render_template('menuProdConsul.html', productos=prods)
 
 @app.route('/menuProdAgregar')
 def mPA():
     return render_template('menuProdAgregar.html')
 
 
-class Productos(db.Model):
+class Producto(db.Model):
     __tablename__='productos'
-    id_prod=Column(Integer,primary_key=True)
+    id_prod=Column(String,primary_key=True)
     cat_prod=Column(String)
     nom_prod=Column(String)
     desc_prod=Column(String)
     prec_prod=Column(Float)
 
     def consultaIndividual(self, id):
-        return Productos.query.get(id)
+        return Producto.query.get(id)
 
     def agregar(self):
         db.session.add(self)

@@ -117,23 +117,21 @@ th{
      <th> Nombre del producto </th>
      <th> Descripcion </th>
      <th> Precio </th>
-
      <th> Eliminar </th>
      <th> Actualizar </th>
 
-                {%for tienda_reginarem in productos  %}
+     {%for producto in productos  %}
      <tr>
-
-         <td>{{productos.id_prod}}</td>
-         <td>{{productos.cat_prod}}</td>
-         <td>{{productos.nom_prod}}</td>
-         <td>{{productos.desc_prod}}</td>
-         <td>{{productos.prec_prod}}</td>
-
+         <td>{{producto.id_prod}}</td>
+         <td>{{producto.cat_prod}}</td>
+         <td>{{producto.nom_prod}}</td>
+         <td>{{producto.desc_prod}}</td>
+         <td>{{producto.prec_prod}}</td>
+         <td><a href="">Eliminar</a> </td>
+         <td><a href="">Actualizar</a></td>
      </tr>
-                {% endfor %}
+     {% endfor %}
             </table>
-
   </center>
 
 </div>
